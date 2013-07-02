@@ -1,0 +1,730 @@
+/*=============================================================
+* Basics
+==============================================================*/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	font-family: 'Source Sans Pro', Helvetica, sans-serif;
+	font-size: 14px;
+	background: #eee;
+	color: #333;
+}
+
+header {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+footer {
+	display: block;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+#content {
+	width: 40%;
+	min-width: 620px;
+	max-width: 700px;
+	margin: 0 auto;
+}
+	#content .contentWrapper {
+		width: 100%;
+	}
+
+/*=============================================================
+* Reset
+==============================================================*/
+
+body, header, footer, div, p, a, h1, h2, h3, h4, h5, h6, ul, img {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+title {
+	text-transform: capitalize;
+}
+
+/*=============================================================
+* Header
+==============================================================*/
+
+#title, #search {
+	background: #333;
+	padding: 5px;
+	width: 205px;
+}
+
+#options {
+	padding-top: 5px;
+	background: #333;
+	width: 205px;
+}
+
+h1 a {
+	display: block;
+	color: #fff;
+	font-size: 18px;
+	margin: 10px 0 15px 15px;
+}
+	h1 a:visited {
+		cursor: #fff
+	}
+
+#current {
+	color: #fff;
+	margin-left: 15px;
+	text-transform: capitalize;
+}
+
+#input {
+	margin: 15px;
+	padding: 5px 10px;
+	width: 85%;
+	background: #777;
+	border: none;
+	transition: background .3s;
+	-webkit-transition: background .3s;
+	padding: 10px;
+}
+	#input:hover {
+		background: #999;
+	}
+	#input:focus {
+		background: #eee;
+		outline: none;
+	}
+
+.options {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.options li {
+	width: 100%;
+	border-top: 1px solid white;
+}
+
+.options li a {
+	color: white;
+	padding: 10px 15px;
+	display: block;
+}
+	.options li a:hover {
+		background: #444;
+	}
+
+/*=============================================================
+* Autocomplete
+==============================================================*/
+
+.ui-helper-hidden-accessible {
+	border:0;
+	clip:rect(0 0 0 0);
+	height:1px;
+	margin:-1px;
+	overflow:hidden;
+	padding:0;
+	position:absolute;
+	width:1px
+}
+
+.ui-autocomplete {
+	background: #eee;
+	border: 1px solid #ccc;
+	position:absolute;
+	top:0;
+	left:0;
+	cursor:default
+}
+
+.ui-menu-item a {
+	border-bottom: 1px solid #ccc;
+	padding: 5px 10px;
+	cursor: pointer;
+	display: block;
+	font-size: .8em
+}
+
+.ui-menu-item:hover, .ui-state-focus {
+	background-color: #e0811b;
+	color: #fff;
+}
+
+/* username autocomplete */
+.ui-menu-item .username {
+	padding: 0;
+}
+.ui-menu-item .username img {
+	float: left;
+	height: 50px;
+}
+.ui-menu-item .username p{
+	font-size: 1.2rem;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	padding: 0;
+	padding-left: 10px;
+}
+
+/*=============================================================
+* Settings / suggestions
+==============================================================*/
+
+.settings, .suggestions {
+	display: none;
+	background: #777;
+	color: #fff;
+	box-shadow: inset 0px 0px 5px 0px #333;
+}
+
+.settings li {
+	border: none;
+	padding: 10px 15px;
+}
+
+.settings label {
+	float: left;
+	width: 80%;
+}
+
+.settings input {
+	float: right;
+}
+
+#numPosts {
+	float: left;
+	margin: 15px 0 0 10px;
+}
+
+.suggestions li {
+	border: none;
+	width: 100%;
+}
+
+.suggestions a {
+	float: left;
+	width: 100%;
+}
+
+#randomSubreddit {
+	width: 100%;
+}
+
+.suggestions i {
+	display: block;
+	width: 16px;
+	height: 16px;
+	float: left;
+	margin-right: 10px;
+	background: url(img/sprite-icons.png);
+}
+	#i-computer {
+		background-position: -16px 0;
+	}
+	#i-fun {
+		background-position: -32px 0;
+	}
+	#i-gaming {
+		background-position: -48px 0;
+	}
+	#i-gifs {
+		background-position: -64px 0;
+	}
+	#i-learn {
+		background-position: -80px 0;
+	}
+	#i-news {
+		background-position: -96px 0;
+	}
+	#i-videos {
+		background-position: -112px 0;
+	}
+
+.suggested-r {
+	margin-left: 35px;
+	margin-bottom: 10px;
+	display: none;
+}
+
+.suggested-r li a{
+	font-size: 0.8em;
+	padding: 5px 5px;
+	margin: 0;
+}
+
+/*=============================================================
+* Pages
+==============================================================*/
+
+#pages {
+	background: #333;
+	position: fixed;
+	bottom: 0;
+	padding: 5px;
+	width: 40%;
+	min-width: 620px;
+	max-width: 700px;
+	box-shadow: 0px -10px 15px -2px rgba(0,0,0,0.2);
+	border-top: 1px solid rgba(0,0,0,0.3);
+	z-index: 500;
+}
+
+#pages a {
+	text-decoration: none;
+	color: #fff;
+	padding: 4px;
+}
+	#pages a:hover {
+		color: #333;
+		background: #fff;
+	}
+
+#previous {
+	float: left;
+}
+
+#next {
+	float: right;
+}
+
+/*=============================================================
+* Post
+==============================================================*/
+
+.post {
+	background: #fff;
+	margin: 20px 0;
+	border: 1px solid #ccc;
+}
+.post.last {
+	margin-bottom: 60px;
+}
+
+/* Header */
+
+.postHeader {
+	position: relative;
+}
+
+h3 {
+	padding: 10px;
+	font-size: 1em;
+	float: left;
+	width: 90%;
+}
+
+.post .score {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #eee;
+	text-align: center;
+	padding: 5px;
+}
+
+/* Footer */
+
+.postFooter {
+	background: #ccc;
+	box-shadow: inset 1px 4px 9px -5px black;
+	font-size: 0.9em;
+	color: #555;
+	padding: 8px 10px;
+}
+
+
+.postFooter a {
+	color: #777;
+}
+	.postFooter a:hover {
+		color: #e0811b;
+	}
+
+.meta {
+	width: 100%;
+	float: left;
+}
+	.meta .origin {
+		float: left;
+	}
+	.meta .time {
+		float: right;
+	}
+
+.links {
+	width: 100%;
+	float: left;
+}
+
+/* Content */
+
+.post img {
+	max-width: 100%;
+	width: 100%;
+	float: left;
+}
+
+.post iframe {
+	float: left;
+}
+
+.post .text {
+	float: left;
+	padding: 10px;
+	font-size: 0.9em;
+	line-height: 1.5em;
+}
+
+.fullText {
+	display: none;
+}
+
+.postContent a, .showFull {
+	color: #7DA9FA;
+	cursor: pointer;
+}
+	.postContent a:hover, .showFull:hover {
+		text-decoration: underline;
+	}
+
+/* Oembed */
+
+.toArticle {
+	display: block;
+	float: left;
+	padding: 10px;
+	width: 100%;
+}
+
+.oembed {
+	display: none;
+}
+
+.oembedall-container {
+	margin: 0 10px;
+}
+
+.oembedall-container span, .oembedall-container a {
+	display: none;
+}
+
+.oembedall-container img {
+	width: 30%;
+	float: left;
+	margin-right: 10px;
+}
+
+.oembedall-container p {
+	float: left;
+}
+
+.oembedall-container b {
+	margin-top: 50px;
+}
+
+.nsfw_check {
+	margin: 20px;
+	height: 71px;
+	background: url(img/nsfw.png) no-repeat;
+}
+	.nsfw_check p {
+		padding-left: 80px;
+		padding-top: 10px;
+	}
+
+
+/*=============================================================
+* Comments
+==============================================================*/
+
+#comments {
+	position: fixed;
+	top: 0;
+	right: -25%;
+	background: #fff;
+	height: 100%;
+	width: 25%;
+	min-width: 350px;
+	border-left: 1px solid #ccc;
+}
+
+#commentsHeader {
+	background: #333;
+	color: #fff;
+}
+
+#commentsHeader h4 {
+	padding: 5px;
+	margin-left: 20px;
+}
+
+#closeComments {
+	float: left;
+	color: #fff;
+	font-weight: bold;
+	margin: 5px;
+}
+	#closeComments:hover {
+		opacity: 0.5;
+	}
+
+#commentsContent {
+	width: 100%;
+	height: 100%;
+	overflow-x: scroll;
+}
+
+/*Scroll bar */
+
+#commentsContent::-webkit-scrollbar {
+    width: 4px;
+    background: #ddd;
+}
+#commentsContent::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+#commentsContent::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #aaa;
+}
+
+/* Comment */
+
+.comment {
+	display: block;
+	border-top: 1px solid #ccc;	
+	padding: 10px;
+}
+
+.comment:nth-child(even) {
+	background: #eee;
+}
+
+.comment .author {
+	font-weight: bold;
+	float: left;
+}
+	.op {
+		color: red;
+	}
+
+.comment .toggleReplies {
+	float: left;
+	color: #333;
+	margin-right: 5px;
+}
+	.comment .toggleReplies:hover {
+		background: #333;
+		color: #fff;
+	}
+
+.comment .body {
+	float: left;
+	width: 100%;
+	margin-top: 5px;
+}
+
+.comment .score {
+	float: right;
+	color: #777;
+	font-size: 0.8em;
+}
+
+/* Subcomments */
+
+.replies {
+	float: left;
+	padding-left: 10px;
+	border-left: 1px solid #ccc;
+	margin-top: 10px;
+	display: none;
+}
+
+.replies li {
+	border-top: 1px solid #ccc;
+	padding: 5px;
+}
+	.replies li:first-child {
+		border: none;
+	}
+
+/*=============================================================
+* Various
+==============================================================*/
+
+.loader {
+	width: 31px;
+	height: 31px;
+	margin: 0 auto;
+	background: url(img/loader.gif);
+	margin-top: 50px;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+
+/*=============================================================
+* Mobile
+==============================================================*/
+
+.mobileMenu   {
+	background: #333 url(img/mobileMenu.png) no-repeat center center;
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: none;
+	cursor: pointer;
+}
+
+/*=============================================================
+* Media Queries 
+==============================================================*/
+
+@media (max-width: 1350px) {
+	#content {
+		margin: 0 0 0 220px;
+	}
+	#comments {
+	}
+}
+
+@media (max-width: 860px) {
+	#content {
+		margin: 60px auto;
+		width: 80%;
+	}
+	#pages {
+		width: 80%;
+	}
+	header {
+		display: none;
+	}
+	.mobileMenu {
+		display: block;
+	}
+}
+
+@media (max-width: 640px) {
+	#content {
+		margin-left: 0;
+		min-width: 100%;
+		width: 100%;
+	}
+	#pages {
+		min-width: 100%;
+		width: 100%;
+	}
+}
+
+/*=============================================================
+* Sidr
+==============================================================*/
+
+.sidr {
+    display: none;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 999999;
+    width: 260px;
+    overflow-x: none;
+    overflow-y: auto;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 15px;
+    background: #333;
+    color: #fff;
+    -webkit-box-shadow: inset 0 0 5px 5px #222;
+    -moz-box-shadow: inset 0 0 5px 5px #222;
+    box-shadow: inset 0 0 5px 5px #222;
+}
+.sidr .sidr-inner {
+    padding: 0 0 15px;
+}
+.sidr.right {
+    left: auto;
+    right: -260px;
+}
+.sidr.left {
+    left: -260px;
+    right: auto;
+}
+.sidr h1 {
+ 	margin-bottom: 20px;
+}
+.sidr ul li {
+    display: block;
+    margin: 0;
+    margin-left: 20px;
+    line-height: 48px;
+    border-top: 1px solid #4d4d4d;
+    border-bottom: 1px solid #1a1a1a;
+}
+.sidr form {
+    margin: 0 15px;
+}
+.sidr label {
+    font-size: 13px;
+}
+.sidr input[type="text"], .sidr input[type="password"], .sidr input[type="date"], .sidr input[type="datetime"], .sidr input[type="email"], .sidr input[type="number"], .sidr input[type="search"], .sidr input[type="tel"], .sidr input[type="time"], .sidr input[type="url"], .sidr textarea, .sidr select {
+    width: 100%;
+    font-size: 13px;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 10px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+    display: block;
+    clear: both;
+}
+.sidr input[type=checkbox] {
+    width: auto;
+    display: inline;
+    clear: none;
+    margin-left: 20px;
+}
+.sidr .numPosts {
+	width: 60%;
+	float: left;
+}
+.sidr .numPostsValue {
+	float: right;
+	margin: -12px 40px 0 0;
+}

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Front Page | Reddit-Roll</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--<script src="libs/cssrefresh.js"></script>-->
+
+</head>
+
+<body>
+	<header>
+		<div id="title">
+			</ul>
+			<h1><a href="index.html">Reddit-Roll v2</a></h1>
+			<p id="current">The Front Page</p>
+		</div>
+		<div id="search">
+			<input type="text" id="input" placeholder="Type a subreddit">
+		</div>
+		<div id="options">
+			<ul class="options">
+				<li>
+					<a href="#" id="settings" class="closed">Settings</a>
+					<ul class="settings">
+						<li class="cf">
+							<label for="numPosts">Posts per page</label>
+							<input type="range" id="numPosts" class="numPosts" min="10" max="100" value="25" step="5">
+							<p class="numPostsValue">25</p>
+						</li>
+						<li class="cf">
+							<label for="nsfw">Show NSFW links</label>
+							<input type="checkbox" id="nsfw" class="nsfw">
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" id="suggestions" class="closed">Suggestions</a>
+					<ul class="suggestions">
+						<li class="cf" ><a href="#" id="randomSubreddit">Random subreddit</a></li>
+						<li class="cf">
+							<a href="#"><i id="i-art"></i>Art</a>
+							<ul class="suggested-r">
+								<li><a href="#">AlbumArtPorn</a></li>
+								<li><a href="#">Art</a></li>
+								<li><a href="#">BlackAndWhite</a></li>
+								<li><a href="#">EarthPorn</a></li>
+								<li><a href="#">iTookAPicture</a></li>
+								<li><a href="#">StreetArt</a></li>
+							</ul>
+						</li>
+						<li class="cf">
+							<a href="#"><i id="i-computer"></i>Computer science</a>
+							<ul class="suggested-r">
+								<li><a href="#">WebDev</a></li>
+								<li><a href="#">Javascript</a></li>
+								<li><a href="#">PHP</a></li>
+								<li><a href="#">HTML5</a></li>
+								<li><a href="#">CompSci</a></li>
+								<li><a href="#">DailyProgrammer</a></li>
+								<li><a href="#">WebCodingTV</a></li>
+							</ul>
+						</li>
+						<li class="cf">
+							<a href="#"><i id="i-fun"></i>Fun</a>
+							<ul class="suggested-r">
+								<li><a href="#">Funny</a></li>
+								<li><a href="#">BirdsWithArms</a></li>
+								<li><a href="#">fffffffuuuuuuuuuuuu</a></li>
+								<li><a href="#">LolCats</a></li>
+								<li><a href="#">Meme</a></li>
+								<li><a href="#">WTF</a></li>
+							</ul>
+						</li>
+						<li class="cf">
+							<a href="#"><i id="i-gaming"></i>Gaming</a>
+							<ul class="suggested-r">
+								<li><a href="#">IndieGaming</a></li>
+								<li><a href="#">TrueGaming</a></li>
+								<li><a href="#">LeagueOfLegends</a></li>
+								<li><a href="#">GameMusic</a></li>
+								<li><a href="#">GamerNews</a></li>
+								<li><a href="#">GamePhysics</a></li>
+								<li><a href="#">RandomActsOfGaming</a></li>
+							</ul>
+						</li>
+						<li class="cf">
+							<a href="#"><i id="i-gifs"></i>Gifs</a>
+							<ul class="suggested-r">
+								<li><a href="#">Gifs</a></li>
+								<li><a href="#">CatGifs</a></li>
+								<li><a href="#">ReactionGifs</a></li>
+								<li><a href="#">WhereDidTheSodaGo</a></li>
+								<li><a href="#">Cinemagraphs</a></li>
+								<li><a href="#">CreepyGifs</a></li>
+								<li><a href="#">PerfectLoops</a></li>
+							</ul>
+						</li>
+						<li class="cf">
+							<a href="#"><i id="i-learn"></i>Learn stuff</a>
+							<ul class="suggested-r">
+								<li><a href="#">TodayIlearned</a></li>
+								<li><a href="#">LearnUselessTalents</a></li>
+								<li><a href="#">IWantToLearn</a></li>
+								<li><a href="#">LanguageLearning</a></li>
+								<li><a href="#">YouShouldKnow</a></li>
+								<li><a href="#">LifeProTips</a></li>
+								<li><a href="#">Survival</a></li>
+							</ul>
+						</li>
+						<li class="cf">
+							<a href="#"><i id="i-news"></i>News</a>
+							<ul class="suggested-r">
+								<li><a href="#">WorldNews</a></li>
+								<li><a href="#">NewsPorn</a></li>
+								<li><a href="#">Politics</a></li>
+								<li><a href="#">Science</a></li>
+								<li><a href="#">Technology</a></li>
+								<li><a href="#">OffBeat</a></li>
+								<li><a href="#">Privacy</a></li>
+							</ul>
+						</li>
+						<li class="cf">
+							<a href="#"><i id="i-videos"></i>Videos</a>
+							<ul class="suggested-r">
+								<li><a href="#">Videos</a></li>
+								<li><a href="#">MusicVideos</a></li>
+								<li><a href="#">Documentaries</a></li>
+								<li><a href="#">ObscureMedia</a></li>
+								<li><a href="#">Trailers</a></li>
+								<li><a href="#">CultTrailers</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<div class="mobileMenu"></div>
+	<div id="sidr">
+		<h1><a href="index.html">Reddit-Roll v2</a></h1>
+		<div id="mobileSearch">
+			<input type="text" id="input" placeholder="Type a subreddit">
+		</div>
+		<ul>
+			<li class="cf">
+				<label>Posts per page</label>
+				<br>
+				<input type="range" class="numPosts" min="10" max="100" value="25" step="5">
+				<p class="numPostsValue">25</p>
+			</li>
+			<li class="cf">
+				<label for="nsfw">Show NSFW links</label>
+				<input type="checkbox" id="nsfw" class="nsfw">
+			</li>
+		</ul>
+	</div>
+
+	<div id="content">
+		<div class="loader"></div>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="js/libs.js"></script>
+
+	<!--<script src="js/app.min.js"></script>-->
+	<script src="js/app.js"></script>
+	
+</body>
+</html>
